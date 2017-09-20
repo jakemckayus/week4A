@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<meta charset=utf-8 />
+<title>SVG opacity</title>
+</head>
+<body>
+  <script>
+    d3.select("body")
+    .append("svg")
+    .attr("width", '300px')
+    .attr('height', '400px')
+    .selectAll(".circle")
+    .data([1,2,3,4])
+    .enter()
+    .append("circle")
+    .attr("cx", function(d,i) {
+      return d*10*(i+1);
+    })
+    .attr("cy", function(d,i) {
+      return d*10*(i+1);
+    })
+    .attr("r", function(d,i) {
+      return (i+1)*d*5;
+    })
+    .attr("fill", 'rgba(200,200,300,0.4)')
+  </script>
+</body>
+</html>

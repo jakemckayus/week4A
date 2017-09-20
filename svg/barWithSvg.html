@@ -1,0 +1,39 @@
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<style>
+  svg {
+    height: 200px;
+    width: 200px;
+    border: 1px solid gray;
+  }
+</style>
+<body>
+
+<div>
+  <svg>
+  </svg>
+</div>
+</body>
+  <footer>
+    
+<script>
+d3.select("svg")
+.selectAll("rect")
+.data([50,100,40, 30, 120, 90,100,200])
+.enter()
+.append("rect")
+.attr("width", 10)
+.attr("height", function(d) {return d})
+.style("fill", "blue")
+.style("stroke", "red")
+.style("stroke-width", "1px")
+.style("opacity", .25)
+.attr("x", function(d,i) {return i * 10})
+.attr("y", function(d) {return 100 - d})
+
+</script>
+  </footer>
+
+</html>

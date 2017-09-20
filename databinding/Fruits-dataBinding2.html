@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+    
+</ul>
+<script type="text/javascript">
+    var fruits = ['Apples','Pears','Bananas','ffdds'];
+
+    var list = d3.select('ul');
+    var xx = list.selectAll('li').data(fruits);
+    xx.enter().append('li').text( function(d){
+        console.log('enter d', d);
+    	return d;
+    });
+    xx.text( function(d){
+        console.log('d', d);
+        console.log("this is a test", testing);
+        return d;
+    });
+</script>
+</body>
+
+
+</html>

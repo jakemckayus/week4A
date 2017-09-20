@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  <body>
+    <style>
+      .bar{
+        height: 10px;
+        background-color: blue;
+        border-bottom: 1px solid white;
+      }
+    </style>
+    <div class="bar" style="width: 18%"></div>
+    <div class="bar" style="width: 4%"></div>
+    <div class="bar" style="width: 7%"></div>
+    <script>
+
+    d3.select('body').selectAll('.bar')
+    .data([8,3])
+    .exit().remove();
+
+    </script>
+  </body>
+</html>

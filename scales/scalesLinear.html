@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script  src="http://d3js.org/d3.v3.min.js"></script>
+    <script>
+var margin = { top: 10, right: 10, bottom: 10, left: 10 },
+    width = 960 - margin.left - margin.right,
+    height = 640 - margin.top - margin.bottom;
+
+var svg = d3.select('body').append('svg')
+    .attr('width', width + margin.left + margin.right)
+    .attr('height', height + margin.top + margin.bottom)
+  .append('g')
+    .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+      var width = 800;
+      // the heights of the worlds latest buildings, in ft.
+      var data = [2717, 2073, 1971, 
+            1776, 1670];
+          // create our svg and add it 
+          // to the `<body>`
+      var svg = d3.select('body')
+          .append('svg');
+          // create a scale that goes from 
+          // [0, max(data)] -> [10, width]
+      console.log('max data:', d3.max(data));    
+      var scale = d3.scale.linear()
+            .domain([0, d3.max(data)])
+            .range([10, width]);
+          // create a new axis that 
+          // uses this new scale
+      var axis = d3.svg.axis().scale(scale);
+         // add the new axis to the svg. 
+         // same as `axis(svg);` except 
+         // that it returns `svg`
+      svg.call(axis);
+    </script>
+  </body>
+</html>

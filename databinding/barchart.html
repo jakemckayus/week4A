@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+  </head>
+  <body>
+    <style>
+      .bar{
+        height: 10px;
+        background-color: red;
+        border-bottom: 1px solid white;
+      }
+    </style>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+
+    <script>
+    var data = [10, 30, 60,55, 90, 100, 200, 400,100];
+    d3.selectAll('.bar').data(data)
+      .style('width', function(d){
+        console.log ('width' , d);
+        return d + '%'
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<meta charset="utf-8">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<body>
+<script>
+
+var w = window.innerWidth,
+h = window.innerHeight;
+var margin = {top: 50, right: 50, bottom: 50, left: 50},
+    width = 500 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+var myX = d3.scale.linear()
+    .domain( [0, 10] )
+    .range ( [0,width] );
+var myY = d3.scale.linear()
+    .domain([0,10 ])
+    .range([height,0]);
+
+var myXAxis = d3.svg.axis().scale(myX).orient("top");
+var myYAxis = d3.svg.axis().scale(myY).orient("left");
+var mySVG = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform","translate("+ margin.left + "," + margin.top + ")");
+var axisXGroup = mySVG.append("g")
+.attr("transform", "translate(0," + height + ")")
+.call( myXAxis );
+var axisYGroup = mySVG.append("g").call( myYAxis );
+
+</script>
+</body>
+</html>

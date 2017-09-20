@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://d3js.org/d3.v3.min.js"></script></head>
+<body>
+<ul>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
+<script type="text/javascript">
+	var fruits = ['Apples','Pears','Bananas','xxx'];
+
+    d3.selectAll('li').data(fruits).text( function(d){
+    	return d;
+    });
+</script>
+</body>
+
+</html>

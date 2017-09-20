@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+  </head>
+  <body>
+    <style>
+      .bar{
+        height: 10px;
+        background-color: blue;
+        border-bottom: 1px solid white;
+      }
+    </style>
+    <script>
+    var data = d3.range(200);
+    d3.select('body').selectAll('.bar').data(data)
+      .enter().append('div')
+        .style('width', function(d){ return d + '%'; })
+        .attr('class', 'bar');
+    </script>
+  </body>
+</html>
